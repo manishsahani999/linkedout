@@ -18,9 +18,11 @@ class JobsCreate extends React.Component {
     super(props);
 
     this.state = {
-      email: "manish@gmail.com",
-      password: "password",
       title: "",
+      description: "",
+      numberOfPeople: "",
+      requirment: "",
+      location:"",
     };
   }
 
@@ -54,24 +56,60 @@ class JobsCreate extends React.Component {
                     <Input
                       onChange={this.handleChange}
                       value={this.state.title}
-                      name="Title"
+                      name="title"
                       className="border-input"
-                      placeholder="Give this a title"
-                      type="email"
+                      placeholder="Give this job a title"
+                      type="text"
                       size="lg"
                     />
+                  </FormGroup>
+                  <FormGroup>
+                    <Input
+                      onChange={this.handleChange}
+                      value={this.state.description}
+                      name="description"
+                      className="border-input"
+                      placeholder="Tell the worker about the job"
+                      type="textarea"
+                      style={{ height: 200 }}
+                      size="lg"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Input
+                      onChange={this.handleChange}
+                      value={this.state.numberOfPeople}
+                      name="numberOfPeople"
+                      className="border-input"
+                      placeholder="How Many Workers do you required"
+                      type="number"
+                      size="lg"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Button
+                      className="btn mr-1"
+                      color="danger"
+                      size="lg"
+                      type="button"
+                    >
+                      <span className="text-white">Submit</span>
+                    </Button>
+                    <Link to={__EMPLOYER_DASHBOARD}>
+                      <Button
+                        className="btn mr-1"
+                        color="dark"
+                        outline
+                        size="lg"
+                        type="button"
+                      >
+                        <span className="text-dark">back to dashboard</span>
+                      </Button>
+                    </Link>
                   </FormGroup>
                 </Form>
               </Col>
               <Col md="6">Sahani</Col>
-            </Row>
-            <Row>
-              <Link
-                to={__EMPLOYER_DASHBOARD}
-                className="btn btn-round bg-primay"
-              >
-                back to dashboard
-              </Link>
             </Row>
           </Container>
         </div>
