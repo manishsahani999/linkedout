@@ -12,8 +12,6 @@ export function authentication(state = initialState, action) {
         loggedIn: true,
       };
     case userConstants.LOGIN_SUCCESS:
-      localStorage.setItem('token', action.payload.token)
-      localStorage.setItem('isEmployer', action.payload.isEmployer)
       return {
         loggedIn: true,
         isEmployer: action.payload.isEmployer

@@ -9,9 +9,9 @@ import {
   Form,
 } from "reactstrap";
 import { connect } from "react-redux";
-import { userActions } from "actions/user.actions";
 import { __EMPLOYER_DASHBOARD } from "routes";
 import { Link } from "react-router-dom";
+import { jobActions } from "actions/job.action";
 
 class JobsCreate extends React.Component {
   constructor(props) {
@@ -22,7 +22,8 @@ class JobsCreate extends React.Component {
       description: "",
       numberOfPeople: "",
       requirment: "",
-      location:"",
+      location: "",
+      budget: 0
     };
   }
 
@@ -30,13 +31,10 @@ class JobsCreate extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.info("login form submitted");
-    this.props.login(this.state);
+    this.props.post(this.state);
   };
 
   render() {
-    console.info(this.props);
-
     return (
       <>
         <div className="section " id="features">
@@ -66,6 +64,17 @@ class JobsCreate extends React.Component {
                   <FormGroup>
                     <Input
                       onChange={this.handleChange}
+
+                      name="budget"
+                      className="border-input"
+                      placeholder="Budget"
+                      type="text"
+                      size="lg"
+                    />
+                  </FormGroup>
+                  <FormGroup>
+                    <Input
+                      onChange={this.handleChange}
                       value={this.state.description}
                       name="description"
                       className="border-input"
@@ -88,6 +97,7 @@ class JobsCreate extends React.Component {
                   </FormGroup>
                   <FormGroup>
                     <Button
+                      onClick={this.handleSubmit}
                       className="btn mr-1"
                       color="danger"
                       size="lg"
@@ -119,7 +129,7 @@ class JobsCreate extends React.Component {
 }
 
 const mapStateToProps = (state) => ({ auth: state.authentication });
-const mapDispatchToProps = { login: userActions.login };
+const mapDispatchToProps = { post: jobActions.postJob };
 const connected = connect(mapStateToProps, mapDispatchToProps)(JobsCreate);
 
 export { connected as JobsCreate };

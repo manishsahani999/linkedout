@@ -18,7 +18,8 @@ class Login extends React.Component {
     super(props);
 
     this.state = {
-      email: "manish@gmail.com",
+      // email: "manish@gmail.com",
+      email: 'janedoe@gmail.com',
       password: "password",
     };
   }
@@ -27,12 +28,11 @@ class Login extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.info("login form submitted");
     this.props.login(this.state);
   };
 
+
   render() {
-    console.info(this.props);
     const {auth} = this.props;
     if (auth && auth.loggedIn && auth.isEmployer) return <Redirect to={__EMPLOYER_DASHBOARD} />
     if (auth && auth.loggedIn && !auth.isEmployer) return <Redirect to="/workers/dashboard" />
@@ -62,7 +62,7 @@ class Login extends React.Component {
                       className="f- text-center mb-4 text-uppercase"
                       style={{ fontSize: "3rem" }}
                     >
-                      Workers Login!
+                      Login
                     </h1>
                     <Form onSubmit={this.handleSubmit}>
                       <FormGroup>

@@ -33,13 +33,8 @@ const Index = () => (
             Hire Small scale workers direclty and easily
           </h1>
           <h4 className="text-dark mb-5 f-anon">
-            Remcon uses recycled kubernetes containers, which remembers there
-            previous state even after getting recycled. And ensures the
-            continuity of the developement process.
-            {/* These are the long lived disposable kubernetes containers,
-        that remembers its pervious state even after getting
-        destroyed.
-        Remocn leads to frictionless coding to develop multi-language Cloud & Desktop IDEs with state-of-the-art web technologies. */}
+            Linkout is a platfrom to ease out the pain of finding jobs and
+            getting hired for small scaled workers.
           </h4>
           <Link to={__LOGIN_ROUTE}>
             <Button
@@ -49,7 +44,7 @@ const Index = () => (
               size="lg"
               type="button"
             >
-              <span className="text-dark">Worker Login</span>
+              <span className="text-dark">Find Jobs</span>
             </Button>
           </Link>
           <Button
@@ -58,7 +53,7 @@ const Index = () => (
             size="lg"
             type="button"
           >
-            <span className="">Employer Login</span>
+            <span className="">Hire workers</span>
           </Button>
         </div>
       </Container>
