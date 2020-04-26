@@ -47,14 +47,16 @@ const Index = () => (
               <span className="text-dark">Find Jobs</span>
             </Button>
           </Link>
-          <Button
-            className="btn-round mr-1"
-            color="dark"
-            size="lg"
-            type="button"
-          >
-            <span className="">Hire workers</span>
-          </Button>
+          <Link to={__LOGIN_ROUTE}>
+            <Button
+              className="btn-round mr-1"
+              color="dark"
+              size="lg"
+              type="button"
+            >
+              <span className="">Hire workers</span>
+            </Button>
+          </Link>
         </div>
       </Container>
     </div>
